@@ -1,6 +1,8 @@
-<p align="center">
-  <img src="logo.png" alt="drawing" width="400" text-align="center"/>
-</p>
+<div align="center">
+  <img src="logo.png" alt="drawing" width="250" text-align="center"/>
+  <h1>Cinnamon</h1>
+</div>
 
-# Cinnamon
-An Interpreted scripting language built in rust
+>  This is the main source code repository for [Cinnamon], an interpreted scripting language built in rust.
+
+[Cinnamon]: https://github.com/Bruhatt-Rao/Cinnamon

@@ -40,7 +40,7 @@ impl Default for BinaryExpr {
 }
 
 pub struct Identifier {
-    kind: NodeType,
+    kind: NodeType, 
     symbol: String,
 }
 

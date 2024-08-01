@@ -11,6 +11,7 @@ enum TokenType {
     Binaryoper,
     Identifier,
     Equals,
+    Eof,
 }
 
 #[derive(Debug)]
@@ -39,6 +40,7 @@ pub fn tokenize(program: String) -> Vec<Token> {
     lines.remove(0);
     lines.remove(lines.len()-1);
     let mut tokens = vec![];
+
     while lines.len() > 0 {
         let mut l = lines[0].clone();
         if l == "(" {
@@ -100,10 +102,9 @@ pub fn tokenize(program: String) -> Vec<Token> {
             }
         }
     }
+
+    let t = Token::new("EOF".to_string(), TokenType::Eof);
+    tokens.push(t);
     println!("{:?}", tokens);
     tokens
-}
-
-fn execute(program: Vec<String>) {
-    
 }

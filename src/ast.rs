@@ -1,3 +1,4 @@
+#[derive(Debug)]
 enum NodeType {
     Program,
     NumericLiteral,
@@ -5,20 +6,22 @@ enum NodeType {
     BinaryExpr,
 }
 
+#[derive(Debug)]
 pub struct Stmt {
     kind: NodeType
 }
 
+#[derive(Debug)]
 pub struct Program {
     kind: NodeType,
     body: Vec<Stmt>,
 }
 
-impl Default for Program {
-    fn default() -> Program {
-        Program {
-            kind: NodeType.Program,
-        }
+impl Program {
+    pub fn new() -> Program {
+        let kind = NodeType::Program;
+        let body = Vec::<Stmt>::new();
+        Program { kind, body }
     }
 }
 
@@ -31,11 +34,10 @@ pub struct BinaryExpr {
     operator: String,
 }
 
-impl Default for BinaryExpr {
-    fn default() -> BinaryExpr {
-        BinaryExpr {
-            kind: NodeType.BinaryExpr,
-        }
+impl BinaryExpr {
+    pub fn new(left: Expr, right: Expr, operator: String) -> BinaryExpr {
+        let kind = NodeType::BinaryExpr;
+        BinaryExpr { kind, left, right, operator }
     }
 }
 
@@ -44,23 +46,21 @@ pub struct Identifier {
     symbol: String,
 }
 
-impl Default for Identifier {
-    fn default() -> Identifier {
-        Identifier {
-            kind: NodeType.Identifier,
-        }
+impl Identifier {
+    pub fn new(symbol: String) -> Identifier {
+        let kind = NodeType::Identifier;
+        Identifier { kind, symbol }
     }
 }
 
 pub struct NumericLiteral {
     kind: NodeType,
-    value: Integer
+    value: i32
 }
 
-impl Default for NumericLiteral {
-    fn default() -> NumericLiteral {
-        NumericLiteral {
-            kind: NodeType.NumericLiteral,
-        }
+impl NumericLiteral {
+    pub fn new(value: i32) -> NumericLiteral {
+        let kind = NodeType::NumericLiteral;
+        NumericLiteral { kind, value }
     }
 }

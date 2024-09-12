@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
-#[derive(Debug, Clone)]
-enum TokenType {
+#[derive(Debug, Clone, PartialEq)]
+pub enum TokenType {
     Openparen,
     Closeparen,
     Openquote,
@@ -16,8 +16,8 @@ enum TokenType {
 
 #[derive(Debug)]
 pub struct Token {
-    value: String,
-    ty: TokenType,
+    pub value: String,
+    pub ty: TokenType,
 }
 
 impl Token {

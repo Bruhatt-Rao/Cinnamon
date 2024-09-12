@@ -13,8 +13,8 @@ pub struct Stmt {
 
 #[derive(Debug)]
 pub struct Program {
-    kind: NodeType,
-    body: Vec<Stmt>,
+    pub kind: NodeType,
+    pub body: Vec<Stmt>,
 }
 
 impl Program {

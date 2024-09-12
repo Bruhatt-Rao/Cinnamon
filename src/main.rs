@@ -10,6 +10,7 @@ fn main() {
     let file_path = lexer::parse_config(&args);
     let contents = fs::read_to_string(file_path)
         .expect("Should have been able to read the file");
-    let parsed = parser::Parser.produceAST(contents);
+    let parse = parser::Parser::new();
+    let parsed = parse.produceAST(contents);
     println!("{:?}", parsed);
 }

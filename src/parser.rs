@@ -9,7 +9,7 @@ pub struct Parser {
 }
 
 impl Parser {
-	pub fn new(left: ast::Expr, right: ast::Expr, operator: String) -> Parser {
+	pub fn new(left: Option<Box<ast::Expr>>, right: Option<Box<ast::Expr>>, operator: String) -> Parser {
         let tokens = Vec::<lexer::Token>::new();
         Parser { tokens, left, right, operator }
     }
